@@ -1,4 +1,5 @@
 import sys
+import hashlib
 
 def SysLineIter():
     for line in sys.stdin:
@@ -10,18 +11,12 @@ class SysLineOut:
             print line,
 
 def reduce(line_iter, line_out):
-    word_counts = {}
+    total = 0
     for line in line_iter:
-        if not line.strip():
+        if not line:
             continue
-        try:
-            word,count = line.split('\t',1)
-            word_counts[word] = word_counts.get(word,0)+int(count)
-        except:
-            print "'%s'"%line
-            exit()
-    for w,c in word_counts.items():
-        line_out.send_line('%s\t%d\n'%(w,c))
+        total+=int(line)
+    line_out.send_line('%d\n'%total)
     line_out.send_line('')
 
 def main():

@@ -1,0 +1,6 @@
+apple	1
+apple	1
+banana	1
+cat	1
+dog	1
+elephant	1
