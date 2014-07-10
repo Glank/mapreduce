@@ -7,6 +7,14 @@ You can use, `python test.py` for example usage.
 
 The program `splitter.py` is used to simulate hadoop's dispersal of reduce tasks across multiple systems by leveraging multiple processors.
 
+wordcount
+---
+
+Word count is the classic MapReduce version of hello world. It just takes and counts the words in a file.
+Example usage:
+
+    cat book.txt | ./wc_mapper.py | ./wc_reducer.py
+
 sum
 ---
 
