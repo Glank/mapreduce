@@ -14,7 +14,7 @@ The map reduce pair `sum_mapper.py` and `sum_reducer.py` simply sum large number
 Also, `gen.py` produces random numbers for input to this MR job.
 Example usage:
 
-    cat nums.dat | python sum_mapper.py | python sum_reducer.py
+    cat nums.dat | ./sum_mapper.py | ./sum_reducer.py
   
 prime
 -----
@@ -22,10 +22,10 @@ prime
 The MR tasks `prime_mapper.py` and `prime_reducer.py` can be used to factor large numbers.
 Example usage:
 
-    echo "12938485279" | python prime_mapper.py | python prime_reducer.py
+    echo "12938485279" | ./prime_mapper.py | ./prime_reducer.py
 
 sources
--------
+.......
 
 See <a href="http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/">this</a> blog entry for more about
 about writing hadoop streaming jobs in python.
