@@ -22,4 +22,4 @@ prime
 The MR tasks `prime_mapper.py` and `prime_reducer.py` can be used to factor large numbers.
 Example usage:
 
-    echo "1293848527" | python prime_mapper.py | python prime_reducer.py
+    echo "12938485279" | python prime_mapper.py | python prime_reducer.py
