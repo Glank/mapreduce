@@ -23,3 +23,9 @@ The MR tasks `prime_mapper.py` and `prime_reducer.py` can be used to factor larg
 Example usage:
 
     echo "12938485279" | python prime_mapper.py | python prime_reducer.py
+
+sources
+-------
+
+See <a href="http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/">this</a> blog entry for more about
+about writing hadoop streaming jobs in python.
