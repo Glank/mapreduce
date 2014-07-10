@@ -24,8 +24,8 @@ Example usage:
 
     echo "12938485279" | ./prime_mapper.py | ./prime_reducer.py
 
-sources
-.......
+more
+----
 
 See <a href="http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/">this</a> blog entry for more about
 about writing hadoop streaming jobs in python.
