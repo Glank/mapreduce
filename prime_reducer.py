@@ -20,14 +20,12 @@ def reduce(line_iter, line_out):
     for line in line_iter:
         if not line:
             continue
-        command, args = line.split('\t',1)
-        if command=="test_factors":
-            args = tuple(int(i) for i in args.split('\t'))
-            n = args[2]
-            for factor in test_factors(*args):
-                line_out.send_line("factor\t%d\t%d\n"%(factor, n))
-        else:
-            line_out.send_line(line)
+        key, value = line.split('\t',1)
+        start = int(key.split(':')[1])
+        group_size, n = value.split('\t')
+        group_size, n = int(group_size), int(n)
+        for factor in test_factors(start, group_size, n):
+            line_out.send_line("%d-%d\t%d\n"%(start,start+group_size,factor))
     line_out.send_line('')
 
 def main():

@@ -12,12 +12,14 @@ class SysLineOut:
             print line,
 
 def reduce(line_iter, line_out):
-    total = 0
+    totals = {}
     for line in line_iter:
         if not line:
             continue
-        total+=int(line)
-    line_out.send_line('%d\n'%total)
+        key, value = line.split('\t', 1)
+        totals[key] = totals.get(key, 0)+int(value)
+    for key in totals:
+        line_out.send_line('%s\t%d\n'%(key,totals[key]))
     line_out.send_line('')
 
 def main():

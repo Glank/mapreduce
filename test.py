@@ -21,8 +21,8 @@ def splitter_test(n, kind):
         in_command = "cat nums.dat"
     else:
         in_command = 'echo "93479373729748721"'
-    command = "%s | python %s_mapper.py | python splitter.py %d %s_reducer reduce | python %s_reducer.py"
-    command%= (in_command, kind, n, kind, kind)
+    command = "%s | python %s_mapper.py | python splitter.py %d %s_reducer reduce"
+    command%= (in_command, kind, n, kind)
     print command
     os.system(command)
 

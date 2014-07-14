@@ -6,10 +6,10 @@ import time
 from importlib import import_module
 
 def enqueue(queues):
-    i = 0
     for line in sys.stdin:
-        queues[i].put(line)
-        i = (i+1)%len(queues)
+        key, value = line.split('\t',1)
+        h = int(hash(key))%len(queues)
+        queues[h].put(line)
     for q in queues:
         q.put('')
 
@@ -38,6 +38,7 @@ def QueueLineIter(queue):
             cont = False
 
 def main():
+    print "Reached."
     n = int(sys.argv[1])
     module = __import__(sys.argv[2])
     target = getattr(module, sys.argv[3])

@@ -13,7 +13,7 @@ wordcount
 Word count is the classic MapReduce version of hello world. It just takes and counts the words in a file.
 Example usage:
 
-    cat book.txt | ./wc_mapper.py | ./wc_reducer.py
+    cat book.txt | python wc_mapper.py | python wc_reducer.py | sort -grk 2 | head -n 50
 
 sum
 ---
